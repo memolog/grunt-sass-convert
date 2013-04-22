@@ -2,22 +2,22 @@
   "name": "grunt-sass-convert",
   "description": "sass-convert",
   "version": "0.0.1",
-  "homepage": "https://github.com/yyamaguchi/grunt-sass-convert",
+  "homepage": "http://memolog.org/",
   "author": {
     "name": "Yutaka Yamaguchi",
-    "email": "yyamaguchi@sixapart.com"
+    "email": "yutaka.yamaguchi@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/yyamaguchi/grunt-sass-convert.git"
+    "url": "git@github.com:memolog/grunt-sass-convert.git"
   },
   "bugs": {
-    "url": "https://github.com/yyamaguchi/grunt-sass-convert/issues"
+    "url": "https://github.com/memolog/grunt-sass-convert/issues"
   },
   "licenses": [
     {
     "type": "MIT",
-    "url": "https://github.com/yyamaguchi/grunt-sass-convert/blob/master/LICENSE-MIT"
+    "url": "https://github.com/memolog/grunt-sass-convert/blob/master/LICENSE-MIT"
   }
   ],
   "main": "Gruntfile.js",

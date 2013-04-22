@@ -1,6 +1,6 @@
 /*
  * grunt-sass-convert
- * https://github.com/yyamaguchi/grunt-sass-convert
+ * https://github.com/memolog/grunt-sass-convert
  *
  * Copyright (c) 2013 Yutaka Yamaguchi
  * Licensed under the MIT license.
