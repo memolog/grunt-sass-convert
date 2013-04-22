@@ -8,11 +8,11 @@
 
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('sass-convert', 'just execute sass-convert', function () {
+  grunt.registerMultiTask('sass-convert', 'just execute sass-convert', function() {
     var exec = require('child_process').exec;
     var cb = this.async();
 
@@ -24,12 +24,11 @@ module.exports = function (grunt) {
 
 
     var files = this.files[0];
-    grunt.util.async.forEachSeries(files.src, function (src, next) {
+    grunt.util.async.forEachSeries(files.src, function(src, next) {
       var args = [
         '--from', options['from'],
         '--to', options['to'],
-        '--indent', options['indent']
-      ];
+        '--indent', options['indent']];
       var out = src;
       args.push(src);
       if (files.dest) {
@@ -38,8 +37,12 @@ module.exports = function (grunt) {
       var sass = grunt.util.spawn({
         cmd: 'sass-convert',
         args: args
-      }, function (error, result, code) {
-        grunt.file.write(out, result);
+      }, function(error, result, code) {
+        if (result) {
+          grunt.file.write(out, result);
+        } else {
+          grunt.warn('got no result from '+src);
+        }
         next(error);
       });
     }, cb);
