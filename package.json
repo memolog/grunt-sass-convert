@@ -1,0 +1,36 @@
+{
+  "name": "grunt-sass-convert",
+  "description": "sass-convert",
+  "version": "0.0.1",
+  "homepage": "https://github.com/yyamaguchi/grunt-sass-convert",
+  "author": {
+    "name": "Yutaka Yamaguchi",
+    "email": "yyamaguchi@sixapart.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yyamaguchi/grunt-sass-convert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yyamaguchi/grunt-sass-convert/issues"
+  },
+  "licenses": [
+    {
+    "type": "MIT",
+    "url": "https://github.com/yyamaguchi/grunt-sass-convert/blob/master/LICENSE-MIT"
+  }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
