@@ -38,7 +38,7 @@ grunt.initConfig({
 
 ### Options
 
-see sass-convert --help to see the other options 
+`sass-convert --help` to see the other options 
 
 #### options.from
 Type: `String`
