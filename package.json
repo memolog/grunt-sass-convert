@@ -1,6 +1,6 @@
 {
   "name": "grunt-sass-convert",
-  "description": "sass-convert",
+  "description": "run sass-convert with grunt",
   "version": "0.0.1",
   "homepage": "http://memolog.org/",
   "author": {
