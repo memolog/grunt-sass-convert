@@ -18,7 +18,7 @@ grunt.loadNpmTasks('grunt-sass-convert');
 ```
 
 ## The "sass-convert" task
-This plugin requires [sass-convert](http://sass-lang.com/docs/yardoc/) installed. If you have alredy install [Sass](http://sass-lang.com/), you might have already had sass-convert also.
+This plugin requires [sass-convert](http://sass-lang.com/docs/yardoc/) installed. If you have alredy installed [Sass](http://sass-lang.com/), you might have already installed sass-convert also.
 
 ### Overview
 In your project's Gruntfile, add a section named `sass-convert` to the data object passed into `grunt.initConfig()`.
