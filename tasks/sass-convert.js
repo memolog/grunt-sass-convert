@@ -18,8 +18,7 @@ module.exports = function (grunt) {
 
     var options = this.options({
       from: 'scss',
-      to: 'scss',
-      indent: 2
+      to: 'scss'
     });
 
 
