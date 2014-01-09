@@ -17,15 +17,15 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 grunt.loadNpmTasks('grunt-sass-convert');
 ```
 
-## The "sass-convert" task
+## The "sass_convert" task
 This plugin requires [sass-convert](http://sass-lang.com/docs/yardoc/) installed. If you have alredy installed [Sass](http://sass-lang.com/), you might have already installed sass-convert also.
 
 ### Overview
-In your project's Gruntfile, add a section named `sass-convert` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `sass_convert` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  sass_convert: {
     options: {
       // command line options here
     },
@@ -66,7 +66,7 @@ formatted scss files ('''caution: override your scss files''')
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  sass_convert: {
     files: {
       src: ['path/**/*.scss']
     }
@@ -80,7 +80,7 @@ if you want to save formatted files to the another location, use dest property.
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  sass_convert: {
     options: {
       indent: 4
     },

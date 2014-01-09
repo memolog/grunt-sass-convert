@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   // creation: http://gruntjs.com/creating-tasks
   'use strict';
 
-  grunt.registerMultiTask('sass-convert', 'just execute sass-convert', function () {
+  grunt.registerMultiTask('sass_convert', 'just execute sass-convert', function () {
     var cb = this.async();
 
     var options = this.options({
