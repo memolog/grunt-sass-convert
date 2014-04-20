@@ -25,7 +25,7 @@ In your project's Gruntfile, add a section named `sass-convert` to the data obje
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  'sass-convert': {
     options: {
       // command line options here
     },
