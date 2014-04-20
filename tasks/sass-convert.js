@@ -29,7 +29,10 @@ module.exports = function (grunt) {
       args.push(src);
 
       if (files.dest) {
-        out = files.dest + '/' + src.replace(/\.(css|scss|sass)/, '.' + options.to);
+        var srcPath = src.split('/'),
+            fileName = srcPath[srcPath.length - 1];
+
+        out = files.dest + fileName.replace(/\.(css|scss|sass)/, '.' + options.to);
       }
       var sass = grunt.util.spawn({
         cmd: 'sass-convert',
