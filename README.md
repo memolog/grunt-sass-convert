@@ -66,7 +66,7 @@ formatted scss files ('''caution: override your scss files''')
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  'sass-convert': {
     files: {
       src: ['path/**/*.scss']
     }
@@ -80,7 +80,7 @@ if you want to save formatted files to the another location, use dest property.
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  'sass-convert': {
     options: {
       indent: 4
     },
