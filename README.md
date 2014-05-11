@@ -60,18 +60,68 @@ How many spaces to use for each level of indentation.
 
 ### Usage Examples
 
-#### Default Options
-
+#### formatted scss files
 formatted scss files ('''caution: override your scss files''')
 
 ```js
 grunt.initConfig({
   'sass-convert': {
     files: {
-      src: ['path/**/*.scss']
+      src: ['foo/**/*.scss']
+    },{
+      src: ['bar/**/*.scss']    
     }
-  },
+  }
 })
+```
+
+#### convert files with cwd option
+you can use cwd option in files like that.
+
+```js
+grunt.initConfig({
+  sass-convert: {
+    files: {
+      cwd: ['path/to'],
+      src: ['*.scss'],
+      dest: 'sass/'
+    }
+  }
+})
+```
+
+In the above configuration, the task detects scss files in path/to, and then added converted files to the 'sass' directory (when the directories are not found, atutomatically make it)
+
+#### prepend file prefix for the converted files
+And supports file prefix
+
+```js
+grunt.initConfig({
+  sass-convert: {
+    files: {
+      from: 'css',
+      to: 'scss',
+      cwd: ['path/to'],
+      src: ['*.css'],
+      filePrefix: '_',
+      dest: 'sass/partials'
+    }
+  }
+})
+```
+
+In the above configuration, the task detects scss files in path/to, and then added converted files prepaned prefix '_' to the 'sass' directory (when the directories are not found, atutomatically make it)
+
+```
+path/to/foo.css
+path/to/bar.css
+```
+
+converted
+
+```
+sass/partials/_foo.scss
+sass/partials/_bar.scss
 ```
 
 #### Custom Options
@@ -93,4 +143,4 @@ grunt.initConfig({
 ```
 
 ## Release History
-_(Nothing yet)_
+* 0.2.0 enable to set file prefix / support multiple file targets

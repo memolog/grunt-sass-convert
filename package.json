@@ -1,7 +1,7 @@
 {
   "name": "grunt-sass-convert",
   "description": "run sass-convert with grunt",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "homepage": "http://memolog.org/",
   "author": {
     "name": "Yutaka Yamaguchi",
@@ -29,5 +29,6 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"]
+    "gruntplugin"
+  ]
 }

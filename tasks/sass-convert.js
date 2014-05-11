@@ -19,33 +19,53 @@ module.exports = function (grunt) {
       to: 'scss'
     });
 
-    var files = this.files[0];
-    grunt.util.async.forEachSeries(files.src, function (src, next) {
-      var args = [];
-      grunt.util._.forOwn(options, function (value, key) {
-        args.push('--' + key, value);
-      });
-      var out = src;
-      args.push(src);
+    grunt.util.async.forEachSeries(this.files, function (file, nextfile) {
+      grunt.util.async.forEachSeries(file.src, function (src, next) {
+        var args = [];
+        grunt.util._.forOwn(options, function (value, key) {
+          args.push('--' + key, value);
+        });
+        var cwd = file.cwd ? file.cwd : '.';
 
-      if (files.dest) {
-        out = files.dest + '/' + src.replace(/\.(css|scss|sass)/, '.' + options.to);
-      }
-      var sass = grunt.util.spawn({
-        cmd: 'sass-convert',
-        args: args
-      }, function (error, result, code) {
-        if (!error) {
-          if (result) {
-            grunt.file.write(out, result);
-          } else {
-            grunt.warn('got no result from ' + src);
-          }
+        var input = cwd + '/' + src;
+        args.push(input);
+
+        var prefix = file.filePrefix || '';
+        var dest = file.dest ? file.dest : './';
+
+        dest = /\/$/.test(dest) ? dest : dest + '/';
+
+        var filename, srcPath;
+        var split = src.split(/\//);
+
+        if (split.length === 1) {
+          filename = split[0];
+          srcPath = '';
         } else {
-          grunt.warn(error);
+          var len = split.length;
+          filename = split[len - 1];
+          srcPath = split.slice(0, len - 1).join('/') + '/';
         }
-        next(error);
-      });
+
+        if (srcPath) {
+          grunt.file.mkdir(dest + srcPath);
+        }
+
+        var out = dest + srcPath + prefix + filename.replace(/\.(css|scss|sass)/, '.' + options.to);
+        args.push(out);
+
+        grunt.verbose.writeln('\nexecute the following command:');
+        grunt.verbose.writeln('sass-convert ' + args.join(' ') + '\n');
+        var sass = grunt.util.spawn({
+          cmd: 'sass-convert',
+          args: args
+        }, function (error, result, code) {
+          if (error) {
+            grunt.warn(error);
+          }
+          next(error);
+        });
+      }, nextfile);
     }, cb);
   });
 };
