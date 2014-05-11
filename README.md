@@ -98,9 +98,11 @@ And supports file prefix
 ```js
 grunt.initConfig({
   sass-convert: {
-    files: {
+    options: {
       from: 'css',
-      to: 'scss',
+      to: 'scss'
+    },
+    files: {
       cwd: ['path/to'],
       src: ['*.css'],
       filePrefix: '_',
