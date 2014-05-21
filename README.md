@@ -66,11 +66,11 @@ formatted scss files ('''caution: override your scss files''')
 ```js
 grunt.initConfig({
   'sass-convert': {
-    files: {
+    files: [{
       src: ['foo/**/*.scss']
     },{
       src: ['bar/**/*.scss']    
-    }
+    }]
   }
 })
 ```
