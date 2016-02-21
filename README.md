@@ -90,7 +90,7 @@ grunt.initConfig({
 })
 ```
 
-In the above configuration, the task detects scss files in path/to, and then added converted files to the 'sass' directory (when the directories are not found, atutomatically make it)
+In the above configuration, the task detects scss files in path/to, and then added converted files to the 'sass' directory (when the directories are not found, automatically make them)
 
 #### prepend file prefix for the converted files
 And supports file prefix
@@ -112,7 +112,7 @@ grunt.initConfig({
 })
 ```
 
-In the above configuration, the task detects scss files in path/to, and then added converted files prepaned prefix '_' to the 'sass' directory (when the directories are not found, atutomatically make it)
+In the above configuration, the task detects scss files in path/to, and then adds converted files with the prepended prefix '_' to the 'sass' directory (when the directories are not found, automatically make them)
 
 ```
 path/to/foo.css
