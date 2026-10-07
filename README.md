@@ -80,11 +80,13 @@ you can use cwd option in files like that.
 
 ```js
 grunt.initConfig({
-  sass-convert: {
-    files: {
-      cwd: ['path/to'],
-      src: ['*.scss'],
-      dest: 'sass/'
+  'sass-convert': {
+    your_target: {
+      files: [{
+        cwd: 'path/to',
+        src: ['*.scss'],
+        dest: 'sass/'
+      }]
     }
   }
 })
@@ -97,16 +99,18 @@ And supports file prefix
 
 ```js
 grunt.initConfig({
-  sass-convert: {
+  'sass-convert': {
     options: {
       from: 'css',
       to: 'scss'
     },
-    files: {
-      cwd: ['path/to'],
-      src: ['*.css'],
-      filePrefix: '_',
-      dest: 'sass/partials'
+    your_target: {
+      files: [{
+        cwd: 'path/to',
+        src: ['*.css'],
+        filePrefix: '_',
+        dest: 'sass/partials'
+      }]
     }
   }
 })
